@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f8eeed">
+  <title>梦时樱花戳戳乐</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <section class="artboard" aria-label="梦时樱花十六格戳戳乐">
+      <img class="background" src="assets/background.png" alt="梦时樱花梦幻信纸背景">
+
+      <div class="game-layer" id="gameLayer">
+        <div class="content-grid" id="contentGrid"></div>
+        <canvas class="cover-canvas" id="coverCanvas" aria-hidden="true"></canvas>
+        <div class="hotspot-grid" id="hotspotGrid"></div>
+      </div>
+
+      <div class="page-actions" aria-label="操作菜单">
+        <button class="soft-button" id="editButton" type="button">编辑格子文字</button>
+        <button class="soft-button soft-button--quiet" id="resetButton" type="button">重新盖上</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="editorModal" hidden>
+    <div class="modal-backdrop" data-close-modal></div>
+    <section class="editor-card" role="dialog" aria-modal="true" aria-labelledby="editorTitle">
+      <header class="editor-header">
+        <div>
+          <p class="editor-eyebrow">16 格内容</p>
+          <h1 id="editorTitle">编辑格子文字</h1>
+        </div>
+        <button class="icon-button" type="button" data-close-modal aria-label="关闭编辑面板">×</button>
+      </header>
+      <p class="editor-note">输入后会自动暂存。点开对应格子即可看到文字。</p>
+      <div class="editor-fields" id="editorFields"></div>
+      <footer class="editor-footer">
+        <button class="danger-button" id="clearButton" type="button">清空全部内容</button>
+        <button class="done-button" id="doneButton" type="button">完成</button>
+      </footer>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
